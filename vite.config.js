@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/pt/', // Replace 'pt' with your repository name
+  base: '/pt/',
   build: {
     outDir: 'dist'
   }
