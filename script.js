@@ -139,6 +139,7 @@ async function loginWithGoogle() {
     try {
         const result = await signInWithPopup(auth, provider);
         currentUser = result.user;
+        loadSessionHistory();
     } catch (error) {
         console.error('Login error:', error);
     }
