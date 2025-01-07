@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro Timer</title>
-  <script type="module" crossorigin src="/pt/assets/index-Bcp4iVLI.js"></script>
-  <link rel="stylesheet" crossorigin href="/pt/assets/index-Cze19V8U.css">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <div id="auth-container" class="auth-container">
@@ -40,11 +39,11 @@
             </div>
         </div>
     </div>
+    <script type="module" src="./script.js"></script>
     <script>
-        // Register service worker
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('service-worker.js')
+                navigator.serviceWorker.register('./service-worker.js')
                     .then(registration => {
                         console.log('ServiceWorker registration successful');
                     })
