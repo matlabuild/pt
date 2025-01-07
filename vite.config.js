@@ -1,9 +1,8 @@
-export default {
-  root: 'src',
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  base: '/pt/', // Replace 'pt' with your repository name
   build: {
-    outDir: '../dist'
-  },
-  server: {
-    open: true // This will automatically open your browser
+    outDir: 'dist'
   }
-} 
+}) 
