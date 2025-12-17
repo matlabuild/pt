@@ -3,14 +3,13 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 // Firebase configuration
-// Note: Replace with your own Firebase config
 const firebaseConfig = {
-  apiKey: "AIzaSyDemo-replace-with-real-key",
-  authDomain: "focus-app.firebaseapp.com",
-  projectId: "focus-app",
-  storageBucket: "focus-app.appspot.com",
-  messagingSenderId: "123456789",
-  appId: "1:123456789:web:abcdef123456"
+  apiKey: "AIzaSyD702sDy0upNA4f5I9RkluOBUdffHdkh0E",
+  authDomain: "focus-app-e2a2f.firebaseapp.com",
+  projectId: "focus-app-e2a2f",
+  storageBucket: "focus-app-e2a2f.firebasestorage.app",
+  messagingSenderId: "510889728896",
+  appId: "1:510889728896:web:8c42d9f7f14f346ee63f65"
 };
 
 // Initialize Firebase
