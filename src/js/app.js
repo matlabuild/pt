@@ -4,7 +4,6 @@ import router from './router.js';
 import { initAuthListener, signInWithGoogle, logOut } from './services/auth.js';
 import { loadTodaySessions } from './services/sessions.js';
 import { renderDashboard, cleanupDashboard } from './components/dashboard.js';
-import { renderTimer, cleanupTimer } from './components/timer.js';
 import { renderAnalytics } from './components/analytics.js';
 import { renderCalendar } from './components/calendar.js';
 import { renderGoals } from './components/goals.js';
@@ -21,8 +20,7 @@ const userName = document.getElementById('user-name');
 
 // Page cleanup functions
 const cleanupFunctions = {
-  dashboard: cleanupDashboard,
-  timer: cleanupTimer
+  dashboard: cleanupDashboard
 };
 
 // Initialize auth
@@ -65,7 +63,6 @@ logoutBtn?.addEventListener('click', logOut);
 
 // Register routes
 router.register('/', (path) => renderPage('dashboard', renderDashboard));
-router.register('/timer', (path) => renderPage('timer', renderTimer));
 router.register('/analytics', (path) => renderPage('analytics', renderAnalytics));
 router.register('/calendar', (path) => renderPage('calendar', renderCalendar));
 router.register('/goals', (path) => renderPage('goals', renderGoals));
@@ -161,15 +158,12 @@ document.addEventListener('keydown', (e) => {
         router.navigate('/');
         break;
       case 'Digit2':
-        router.navigate('/timer');
-        break;
-      case 'Digit3':
         router.navigate('/analytics');
         break;
-      case 'Digit4':
+      case 'Digit3':
         router.navigate('/calendar');
         break;
-      case 'Digit5':
+      case 'Digit4':
         router.navigate('/goals');
         break;
     }
@@ -192,18 +186,8 @@ document.addEventListener('visibilitychange', () => {
   // when the timer completes while the tab is hidden
 });
 
-// PWA: Service worker registration
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/src/service-worker.js')
-      .then(registration => {
-        console.log('ServiceWorker registered');
-      })
-      .catch(err => {
-        console.log('ServiceWorker registration failed:', err);
-      });
-  });
-}
+// PWA: Service worker registration (disabled for now)
+// TODO: Set up proper service worker for production builds
 
 // Console welcome message
 console.log(
@@ -214,4 +198,4 @@ console.log(
 console.log('Keyboard shortcuts:');
 console.log('  Space - Start/Pause timer');
 console.log('  Escape - Reset timer');
-console.log('  Alt+1-5 - Navigate pages');
+console.log('  Alt+1-4 - Navigate pages');

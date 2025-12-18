@@ -1,6 +1,5 @@
 import store from '../store.js';
 import { formatDuration, formatTimeOfDay, getGreeting, formatFullDate } from '../utils/format.js';
-import { renderTimer } from './timer.js';
 
 // Default categories
 const categories = [
